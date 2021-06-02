@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: arjuna
+  name: arjuna
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arjuna
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: arjuna
+    spec:
+      containers:
+      - image: aravindbargurbh/arjuna:0.0.1
+        name: arjuna
+        resources: {}
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: arjuna
+  name: arjuna
+spec:
+  ports:
+  - name: 9080-9080
+    port: 9080
+    protocol: TCP
+    targetPort: 9080
+  selector:
+    app: arjuna
+  type: LoadBalancer
+status:
+  loadBalancer: {}
