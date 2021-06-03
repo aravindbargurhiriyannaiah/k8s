@@ -1,0 +1,3 @@
+rootProject.name='K8s'
+include 'krishna'
+include 'arjuna'
