@@ -13,6 +13,7 @@ spec:
   strategy: {}
   template:
     metadata:
+      namespace: dev
       creationTimestamp: null
       labels:
         app: krishna
@@ -26,10 +27,11 @@ status: {}
 apiVersion: v1
 kind: Service
 metadata:
+  namespace: dev
   creationTimestamp: null
   labels:
     app: krishna
-  name: krishna
+  name: krishna-svc
 spec:
   ports:
   - name: 9070-9070
@@ -38,6 +40,5 @@ spec:
     targetPort: 9070
   selector:
     app: krishna
-  type: LoadBalancer
 status:
   loadBalancer: {}

@@ -3,4 +3,6 @@ spring:
     name: "arjuna"
 server:
   port: 9080
+advice:
+  url: ""
 

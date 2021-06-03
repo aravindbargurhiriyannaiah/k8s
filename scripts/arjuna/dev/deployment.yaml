@@ -13,6 +13,7 @@ spec:
   strategy: {}
   template:
     metadata:
+      namespace: dev
       creationTimestamp: null
       labels:
         app: arjuna
@@ -26,10 +27,11 @@ status: {}
 apiVersion: v1
 kind: Service
 metadata:
+  namespace: dev
   creationTimestamp: null
   labels:
     app: arjuna
-  name: arjuna
+  name: arjuna-svc
 spec:
   ports:
   - name: 9080-9080
@@ -38,6 +40,5 @@ spec:
     targetPort: 9080
   selector:
     app: arjuna
-  type: LoadBalancer
 status:
   loadBalancer: {}
